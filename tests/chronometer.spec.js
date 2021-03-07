@@ -23,7 +23,7 @@ describe('Chronometer', () => {
       expect(chronometer.intervalId).toEqual(0);
     });
   });
-
+  
   describe('startClick method', () => {
     beforeEach(() => {
       jasmine.clock().install();
