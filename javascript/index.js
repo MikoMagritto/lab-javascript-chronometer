@@ -13,10 +13,17 @@ let milDec = document.getElementById('milDec');
 let milUni = document.getElementById('milUni');
 let splits = document.getElementById('splits');
 
-function printTime() {
-  // ... your code goes here
+btnLeft.onclick = function (){
+  // On demarre le chrono
+  chronometer.startClick(printTime) // ttes les secondes, printTime va etre appelé
+
+  // changer le bouton start en rouge avec le texte stop.
 }
 
+function printTime() {
+  // Mettre à jour l'qfficqhge de lq ,ontre
+}
+//À  chaque seconde, on affiche les minutes et les secondes.
 function printMinutes() {
   // ... your code goes here
 }
@@ -31,7 +38,12 @@ function printMilliseconds() {
 }
 
 function printSplit() {
-  // ... your code goes here
+  if(btnLeft.onclick){
+    let liTag = document.createElement('li')
+    
+    document.body.insertBefore(liTag,)
+  }
+  
 }
 
 function clearSplits() {
@@ -39,27 +51,41 @@ function clearSplits() {
 }
 
 function setStopBtn() {
-  // ... your code goes here
+  btnLeft.innerHTML = "STOP"
+  btnLeft.className = "btn stop"
 }
 
 function setSplitBtn() {
-  // ... your code goes here
+  btnRight.innerHTML = 'SPLIT';
+  btnRight.className = "btn split"
+  //SPLIT devient reset et reset devient Split.
 }
 
 function setStartBtn() {
-  // ... your code goes here
+  btnLeft.innerHTML = "START";
+  btnLeft.className = "btn start"
 }
 
 function setResetBtn() {
-  // ... your code goes here
+  btnRight.innerHTML = "RESET";
+  btnRight.className = "btn reset"
+  // Reset devient split au click sur start et au stop.
 }
 
 // Start/Stop Button
 btnLeft.addEventListener('click', () => {
-  // ... your code goes here
+ if(btnLeft.innerHTML === "START"){
+   setStopBtn();
+   setSplitBtn();
+ }
+ else {
+   setStartBtn();
+   setResetBtn();
+ }
 });
 
 // Reset/Split Button
 btnRight.addEventListener('click', () => {
+
   // ... your code goes here
 });
