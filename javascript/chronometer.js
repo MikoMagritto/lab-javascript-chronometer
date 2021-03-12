@@ -15,6 +15,9 @@ class Chronometer {
   getSeconds() {
     return this.currentTime % 60; // rest of the division by 60
   }
+  getMiliseconds(){
+    return (this.currentTime*1000)%60;
+  }
   twoDigitsNumber(num) {
     if (num < 10) {
       return `0${num}`; // add a 0
